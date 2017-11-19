@@ -1,26 +1,23 @@
 //This is my own work Brandon Johnson
 package draftProject;
 
-public class NFL_Player {
+public abstract class NFL_Player {
+
 	// profile
-	String name = new String();
-	String position = new String();
-	String college = new String();
-	Integer jerseyNum = 0;
-	Integer age = 0;
-	String height = new String();
-	String weight = new String();
+	private String name = new String();
+	private String position = new String();
+	private String college = new String();
+	private Integer jerseyNum = 0;
+	private Integer age = 0;
+	private String height = new String();
+	private String weight = new String();
 	// stats
-	Integer yards = 0;
-	Integer touchdowns = 0;
-	Integer sacks = 0;
-	Integer tackles = 0;
-	Integer gamesPlayed = 0;
-	Integer gamesStarted = 0;
+	private Integer gamesPlayed = 0;
+	private Integer gamesStarted = 0;
 
 	// constructor with parameters
-	public NFL_Player(String name, String position, String college, int age, int jerseyNum, String height,
-			String weight, int yards, int touchdowns, int sacks, int tackles, int gamesPlayed, int gamesStarted) {
+	protected NFL_Player(String name, String position, String college, int age, int jerseyNum, String height,
+			String weight, int gamesPlayed, int gamesStarted) {
 		this.name = name;
 		this.position = position;
 		this.college = college;
@@ -28,16 +25,12 @@ public class NFL_Player {
 		this.age = age;
 		this.height = height;
 		this.weight = weight;
-		this.yards = yards;
-		this.touchdowns = touchdowns;
-		this.sacks = sacks;
-		this.tackles = tackles;
 		this.gamesPlayed = gamesPlayed;
 		this.gamesStarted = gamesStarted;
 	}
 
 	// constructor with no parameters
-	public NFL_Player() {
+	protected NFL_Player() {
 		name = "-";
 		position = "-";
 		college = "-";
@@ -45,10 +38,6 @@ public class NFL_Player {
 		age = 18;
 		height = "-" + " feet &" + "-" + " inches";
 		weight = "-" + " lbs";
-		yards = 0;
-		touchdowns = 0;
-		sacks = 0;
-		tackles = 0;
 		gamesPlayed = 0;
 		gamesStarted = 0;
 	}
@@ -110,38 +99,6 @@ public class NFL_Player {
 		this.weight = weight;
 	}
 
-	public int getYards() {
-		return yards;
-	}
-
-	public void setYards(int yards) {
-		this.yards = yards;
-	}
-
-	public int getTouchdowns() {
-		return touchdowns;
-	}
-
-	public void setTouchdowns(int touchdowns) {
-		this.touchdowns = touchdowns;
-	}
-
-	public int getSacks() {
-		return sacks;
-	}
-
-	public void setSacks(int sacks) {
-		this.sacks = sacks;
-	}
-
-	public int getTackles() {
-		return tackles;
-	}
-
-	public void setTackles(int tackles) {
-		this.tackles = tackles;
-	}
-
 	public int getGamesPlayed() {
 		return gamesPlayed;
 	}
@@ -162,8 +119,7 @@ public class NFL_Player {
 	public String toString() {
 		return "NFL_Player [\n //Profile//\n name= " + name + "\n position= " + position + "\n college= " + college
 				+ "\n jerseyNum= " + jerseyNum + "\n age= " + age + "\n height= " + height + "\n weight= " + weight
-				+ "\n //Stats// \n yards= " + yards + " touchdowns= " + touchdowns + ", sacks= " + sacks + ", tackles= "
-				+ tackles + " gamesPlayed= " + gamesPlayed + " gamesStarted= " + gamesStarted + "]";
+				+ "\n //Stats// \n" + " gamesPlayed= " + gamesPlayed + " gamesStarted= " + gamesStarted + "]";
 	}
 
 }
